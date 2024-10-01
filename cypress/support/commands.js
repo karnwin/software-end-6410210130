@@ -29,3 +29,23 @@ Cypress.Commands.add('login', (username, password) => {
     cy.get('#password').type(password)
     cy.get('#submit').click()
     })
+
+Cypress.Commands.add('login_hw', (username, password) => {
+    cy.get('[data-test="username"]').type(username)
+    cy.get('[data-test="password"]').type(password)
+    cy.get('[data-test="login-button"]').click()
+    })
+
+Cypress.Commands.add('address_hw', (name, surname, address) => {
+    if (name) {
+        cy.get('[data-test="firstName"]').type(name);
+    }
+    if (surname) {
+        cy.get('[data-test="lastName"]').type(surname);
+    }
+    if (address) {
+        cy.get('[data-test="postalCode"]').type(address);
+    }
+    cy.get('[data-test="continue"]').click();
+    });
+      
